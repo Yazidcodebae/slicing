@@ -1,0 +1,38 @@
+@import 'var';
+@import 'mixin';
+@import 'reset';
+@import 'text';
+@import 'button';
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include responsive('xl') {
+        max-width: 1280px;
+    }
+
+    @include responsive('lg') {
+        max-width: 1024px;
+    }
+
+    @include responsive('md') {
+        max-width: 640px;
+    }
+
+    @include responsive('sm') {
+        max-width: 100%;
+    }
+}
+
+.img-fluid {
+    width: 100% !important;
+}
+
+@import 'components/navbar';
+@import 'components/hero';
+@import 'components/services';
+@import 'components/aboutus';
+@import 'components/gallery';
+@import 'components/report';
+@import 'components/footer';

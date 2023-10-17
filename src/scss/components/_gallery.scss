@@ -1,0 +1,81 @@
+.gallery {
+    margin-top: 8.75rem;
+
+    &-title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        @include font('family', 'semibold', 2rem, $black);
+    }
+
+    &-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2rem;
+
+        .item-big {
+            img {
+                width: 40.5rem;
+                height: 31.6875rem;
+                border-radius: 2rem;
+                object-fit: cover;
+            }
+        }
+
+        .item-small {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-auto-flow: dense;
+            justify-content: space-between;
+            gap: 2rem;
+
+            img {
+                max-width: 266px;
+                object-fit: cover;
+                border-radius: 2rem;
+
+            }
+
+            .overlay {
+                position: relative;
+
+                img {
+                    opacity: 0.1;
+                }
+
+                .background {
+                    width: 266px;
+                    height: 229px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    background: #004666;
+                    border-radius: 2rem;
+
+                    &:hover {
+                        background: darken($color: #004666, $amount: 10);
+                    }
+
+                    h5 {
+                        background: linear-gradient(91deg, #039CD8 -9.13%, #3CBEEB 61.55%, #D6D63E 113.47%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-family: Alegreya Sans;
+                        font-size: 1.25rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+}

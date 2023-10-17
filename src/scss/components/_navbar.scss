@@ -1,0 +1,46 @@
+nav.nav {
+    display: grid;
+    grid-template-columns: auto 40%;
+    padding: 20px 0;
+
+    @include responsive_range('sm', 'md') {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+
+    span.logo {
+        width: 180px;
+        height: 39px;
+        display: block;
+        @include bg('/images/logo.png');
+    }
+
+    ul.menu {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 20px;
+
+        li a {
+            text-decoration: none;
+            @include font('family', 'regular', 16px, $text-black);
+
+            &.active {
+                @include font('family2', 'bold', 16px, $text-primary);
+            }
+        }
+
+        @include responsive_range('sm', 'md') {
+            display: none;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+
+        @include responsive_range('sm', 'md') {
+            display: block;
+        }
+    }
+}

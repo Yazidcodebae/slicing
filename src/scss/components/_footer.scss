@@ -1,0 +1,48 @@
+.footer {
+    margin-top: 5rem;
+    background-color: $primary;
+    display: grid;
+    padding: 2.5rem;
+    gap: 2.5rem;
+    grid-template-columns: 30% 80%;
+    border-radius: 2rem;
+
+    &-title {
+        .desc {
+            @include font('family', 'reguler', 1, $white);
+        }
+    }
+
+    &-menu {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 20% 30% 20%;
+        gap: 2.5rem;
+
+        h5,
+        p {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        h5 {
+            @include font('family', 'bold', 1.125rem, $white);
+            border-bottom: 1px solid #3CBEEB;
+            padding-bottom: 8px;
+        }
+
+        p {
+            @include font('family', 'reguler', 1rem, $white);
+
+        }
+    }
+
+    .program {
+        .program-list {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-auto-flow: dense;
+            gap: .5rem;
+        }
+    }
+}

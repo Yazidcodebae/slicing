@@ -1,0 +1,16 @@
+.title {
+    @include font('family', 'bold', 40px, $white);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    @include font('family', 'semibold', 24px, $white);
+
+    &-dark {
+        color: $black !important;
+    }
+
+    &-small {
+        font-size: 18px;
+    }
+}

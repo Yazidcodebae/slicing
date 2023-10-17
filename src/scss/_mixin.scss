@@ -1,0 +1,28 @@
+@mixin responsive($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive_range($min, $max) {
+    @media screen and (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+        @content;
+    }
+}
+
+@mixin bg($file) {
+    background-image: url($file);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin font($family, $weight, $size, $color) {
+    color: #{$color};
+    font-family: map-get($fonts, $family);
+    font-size: $size;
+    font-style: normal;
+    font-weight: map-get($fonts, $weight);
+    line-height: normal;
+}

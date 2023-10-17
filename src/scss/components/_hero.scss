@@ -1,0 +1,79 @@
+.hero {
+    position: relative;
+    border-radius: 32px;
+    background: $primary;
+    height: 700px;
+    z-index: -1;
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        color: $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px 100px;
+        align-items: center;
+        justify-items: center;
+
+        @include responsive('sm') {
+            grid-template-columns: 100%;
+            padding: 20px;
+        }
+    }
+
+    .bg-left {
+        height: 100%;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: url('/images/bg-banner.png');
+            border-radius: 32px;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            left: 0;
+            rotate: -90deg;
+        }
+    }
+
+    .bg-right {
+        height: 100%;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: url('/images/bg-banner.png');
+            border-radius: 32px;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            top: 0;
+            right: 0;
+            rotate: 90deg;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            rotate: 180deg;
+        }
+    }
+}

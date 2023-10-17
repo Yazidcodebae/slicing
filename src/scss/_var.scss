@@ -1,0 +1,28 @@
+// Breakpoints
+$breakpoints: ('1': 1px,
+    'sm': 320px,
+    'md': 768px,
+    'lg': 1200px,
+    'xl': 1400px,
+) !default;
+
+$fonts: ('family': 'Alegreya Sans',
+    'family2': 'Open Sans',
+    'light': 100,
+    'regular': 400,
+    'semibold': 500,
+    'bold': 700,
+) !default;
+
+// Colors
+$red: #FF0000;
+$blue: #0000FF;
+$green: #00FF00;
+$black: #000000;
+$white: #FFFFFF;
+
+$primary: #0290D0;
+
+$text-black: #000000;
+$text-white: #FFFFFF;
+$text-primary: $primary;

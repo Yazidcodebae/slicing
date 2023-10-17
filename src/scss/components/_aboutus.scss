@@ -1,0 +1,50 @@
+.aboutus {
+    margin-top: 7.88rem;
+    height: 25rem;
+    border-radius: 1.5rem;
+    background: #d8edf5;
+    padding: 0 5.38em;
+    display: grid;
+    grid-template-columns: 50% 35%;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    align-content: center;
+
+    .aboutus-image {
+        display: grid;
+        grid-template-columns: 50%;
+        grid-auto-flow: column;
+        align-items: center;
+
+        .item:first-child {
+            margin-top: -8.19em;
+        }
+
+        img {
+            width: 13.5625rem;
+            border-radius: 11.375rem;
+            object-fit: cover;
+
+
+        }
+    }
+
+    .aboutus-desc {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    &-title {
+        @include font('family', 'bold', 2.5rem, $black);
+    }
+
+    &-desc {
+        @include font('family', 'reguler', 1.125rem, $black);
+    }
+
+    &-action {
+        max-width: 12rem;
+    }
+}
