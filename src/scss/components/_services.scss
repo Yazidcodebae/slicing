@@ -9,8 +9,10 @@
     margin: -100px 50px 0;
     padding: 32px;
 
-    @include responsive('sm') {
-        flex-direction: column;
+    @include responsive('sm2') {
+        padding: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .item {
@@ -25,14 +27,30 @@
         min-height: 100px;
         background: #eeecec;
 
-        @include responsive('sm') {
+        @include responsive('sm2') {
             height: auto;
+            &:not(:first-child) {
+                padding: 16px;
+            }
+
+            img {
+                width: 32px;
+            }
+
+            &:not(:first-child) .subtitle {
+                font-size: 15px;
+                text-align: center;
+            }
         }
 
         &:first-child {
             padding: 16px;
             background: #fff;
 
+            @include responsive('sm2') {
+                flex-basis: fit-content;
+            }
         }
+
     }
 }

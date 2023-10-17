@@ -1,11 +1,50 @@
 .gallery {
     margin-top: 8.75rem;
+    
+    @include responsive('sm2') {
+        margin: 0 25px;
+    }
 
     &-title {
         text-align: center;
         margin-bottom: 1.5rem;
         @include font('family', 'semibold', 2rem, $black);
     }
+    
+    &-image-fix {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 50% auto auto;
+        
+        // @include responsive('md')
+        // {
+        //     grid-template-columns: auto auto;
+        // }
+
+        .item {
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 2rem;
+
+                @include responsive('md')
+                {
+                    border-radius: 0.5rem;
+                }
+                
+            }
+
+            &:first-child {
+                grid-row: 1 / span 2;
+
+                @include responsive('sm2')
+                {
+                    grid-row: inherit;
+                }
+            }
+        }
+    }   
 
     &-image {
         display: flex;

@@ -15,12 +15,35 @@ nav.nav {
         @include bg('/images/logo.png');
     }
 
+    @include responsive_range('sm', 'md') {
+        .menu-container {
+            visibility: 0;
+            position: absolute;
+            top: 0;
+            left: -1000px;
+            background-color: #ccc;
+            height: 100vh;
+            width: 70vw;
+            transition: all 800ms ease-in-out;
+
+            &.active {
+                visibility: 1;
+                left: 0;                
+            }
+        }
+    }
+
     ul.menu {
         list-style: none;
         display: grid;
         grid-auto-flow: column;
         align-items: center;
         gap: 20px;
+
+        @include responsive_range('sm', 'md') {
+            grid-auto-flow: row;
+            gap: 10px;
+        }
 
         li a {
             text-decoration: none;
@@ -30,10 +53,7 @@ nav.nav {
                 @include font('family2', 'bold', 16px, $text-primary);
             }
         }
-
-        @include responsive_range('sm', 'md') {
-            display: none;
-        }
+        
     }
 
     .mobile-menu {

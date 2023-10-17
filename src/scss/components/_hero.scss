@@ -5,6 +5,11 @@
     height: 700px;
     z-index: -1;
 
+    @include responsive('sm2') {
+        margin: 0 25px;
+        height: 385px;
+    }
+
     .hero-content {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -16,9 +21,27 @@
         align-items: center;
         justify-items: center;
 
-        @include responsive('sm') {
+        @include responsive('sm2') {
             grid-template-columns: 100%;
-            padding: 20px;
+            padding: 35px;
+            text-align: center;
+
+            .hero-image {
+                .img-fluid {
+                    width: 70% !important;
+                }
+            }
+        }
+
+        @include responsive('md'){
+            .hero-text {
+                .title {
+                    font-size: 24px;
+                }
+                .subtitle {
+                    font-size: 15px;
+                }
+            }
         }
     }
 
@@ -35,6 +58,14 @@
             background: url('/images/bg-banner.png');
             border-radius: 32px;
             background-repeat: no-repeat;
+
+            @include responsive('md'){
+                background-size: 50%;
+            }
+
+            @include responsive('sm2'){
+                background-size: 35%;
+            }
         }
 
         &::before {
@@ -62,6 +93,14 @@
             background: url('/images/bg-banner.png');
             border-radius: 32px;
             background-repeat: no-repeat;
+
+            @include responsive('md'){
+                background-size: 50%;
+            }
+
+            @include responsive('sm2'){
+                background-size: 35%;
+            }
         }
 
         &::before {

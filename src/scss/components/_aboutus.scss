@@ -10,11 +10,21 @@
     justify-content: space-evenly;
     align-content: center;
 
+    @include responsive('sm2') {
+        grid-template-columns: 100%;
+        padding: 45px 30px;
+        margin: 40px 25px;
+    }
+
     .aboutus-image {
         display: grid;
         grid-template-columns: 50%;
         grid-auto-flow: column;
         align-items: center;
+
+        @include responsive('sm2') {
+            display: none;
+        }
 
         .item:first-child {
             margin-top: -8.19em;
